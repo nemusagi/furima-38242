@@ -9,6 +9,7 @@
 | first_name         | string | null: false               |
 | last_name_kana     | string | null: false               |
 | first_name_kana    | string | null: false               |
+| birthday           | date   | null: false               |
 
 ### Association
 
@@ -40,12 +41,11 @@
 | ------------------ | ---------- | ------------------------------ |
 | item               | references | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
-| address            | references | null: false, foreign_key: true | 
 
 ### Association
 
 - belongs_to :item
-- has_one :user
+- belongs_to :user
 - has_one :address
 
 
@@ -58,7 +58,7 @@
 | city               | string     | null: false                    |
 | block              | string     | null: false                    |
 | building           | string     |                                |
-| phone_number       | integer    | null: false                    |
+| phone_number       | string     | null: false                    |
 | order              | references | null: false, foreign_key: true |
 
 ### Association
