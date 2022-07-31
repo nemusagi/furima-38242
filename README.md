@@ -21,7 +21,7 @@
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | name               | string     | null: false                    |
-| content            | text       | null: false, unique: true      |
+| content            | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
 | shipping_charge_id | integer    | null: false                    |
