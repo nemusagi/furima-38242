@@ -22,8 +22,8 @@ RSpec.describe OrderForm, type: :model do
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Postal code can't be blank")
       end
-      it 'prefecture_idを選択しないと購入できない' do
-        @order_form.prefecture_id =''
+      it 'prefecture_idで「---」が選択されている場合は購入できない' do
+        @order_form.prefecture_id = 1
         @order_form.valid?
         expect(@order_form.errors.full_messages).to include("Prefecture can't be blank")
       end
