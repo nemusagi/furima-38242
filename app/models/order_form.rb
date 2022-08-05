@@ -12,9 +12,9 @@ class OrderForm
   validates :item_id
   validates :token
   end
-  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'input correctly'} 
-  validates :prefecture_id, numericality: { other_than: 1 , message: "can't be blank" }
-  validates :phone_number,  numericality: { message: 'Input only number' }
+  validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/, message: 'を正しく入力してください'} 
+  validates :prefecture_id, numericality: { other_than: 1 , message: "を入力してください" }
+  validates :phone_number,  numericality: { message: 'は半角数字のみで入力してください' }
   validates :phone_number, length: { minimum: 10, maximum: 11 }
 
   def save
