@@ -15,62 +15,62 @@ RSpec.describe Item, type: :model do
       it 'nameが空では保存できない' do
         @item.name = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name can't be blank")
+        expect(@item.errors.full_messages).to include("商品名を入力してください")
       end
       it 'contentが空では保存できない' do
         @item.content = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Content can't be blank")
+        expect(@item.errors.full_messages).to include("商品の説明を入力してください")
       end
       it 'category_idが空では保存できない' do
         @item.category_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category can't be blank")
+        expect(@item.errors.full_messages).to include("カテゴリーを入力してください")
       end
       it 'status_idが空では保存できない' do
         @item.status_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status can't be blank")
+        expect(@item.errors.full_messages).to include("商品の状態を入力してください")
       end
       it 'shipping_charge_idが空では保存できない' do
         @item.shipping_charge_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipping charge can't be blank")
+        expect(@item.errors.full_messages).to include("配送料の負担を入力してください")
       end
       it 'shippers_area_idが空では保存できない' do
         @item.shippers_area_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shippers area can't be blank")
+        expect(@item.errors.full_messages).to include("発送元の地域を入力してください")
       end
       it 'shipment_dateが空では保存できない' do
         @item.shipment_date_id = 1
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shipment date can't be blank")
+        expect(@item.errors.full_messages).to include("発送までの日数を入力してください")
       end
       it 'priceが空では保存できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank")
+        expect(@item.errors.full_messages).to include("価格を入力してください")
       end
       it 'userが紐付いていないと保存できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include("ユーザーを入力してください")
       end
       it 'priceが半角数値でなければ保存できない' do
         @item.price = '100円'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is invalid. Input half-width characters")
+        expect(@item.errors.full_messages).to include("価格は半角数字で入力してください")
       end
       it 'priceが300未満では保存できない' do
         @item.price = '200'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include("価格が設定範囲外です")
       end
       it 'priceが9999999より大きければ保存できない' do
         @item.price = '200000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is out of setting range")
+        expect(@item.errors.full_messages).to include("価格が設定範囲外です")
       end
     end
   end
